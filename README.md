@@ -8,6 +8,8 @@ Open `index.html` directly in a browser, or serve the folder with any static fil
 
 ## Deploy: push to GitHub
 
+This repo is already committed locally (check with `git status` — a clean tree means there's nothing new to add or commit, so skip straight to setting the remote and pushing). If you're starting from a fresh clone or copy instead:
+
 ```bash
 cd "path/to/Myrmekes Website"
 git add .
