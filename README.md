@@ -1,0 +1,37 @@
+# Myrmekes Website
+
+Static HTML/CSS site for myrmekes.co.uk. No build step — deploys as-is.
+
+## Local preview
+
+Open `index.html` directly in a browser, or serve the folder with any static file server.
+
+## Deploy: push to GitHub
+
+```bash
+cd "path/to/Myrmekes Website"
+git add .
+git commit -m "Initial Myrmekes website"
+git branch -M main
+git remote add origin https://github.com/<your-username>/myrmekes-website.git
+git push -u origin main
+```
+
+## Deploy: connect Cloudflare Pages
+
+1. Log in to the Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git.
+2. Select the `myrmekes-website` GitHub repo.
+3. Build settings: Framework preset = **None**, Build command = *(leave blank)*, Build output directory = `/`.
+4. Click Save and Deploy. Cloudflare builds and deploys the site; every future push to `main` redeploys automatically.
+
+## Point myrmekes.co.uk at Cloudflare
+
+1. In Cloudflare, add `myrmekes.co.uk` as a site (if not already added) and switch its nameservers from Fasthosts to the two Cloudflare nameservers shown in the dashboard (this step is done in the Fasthosts domain control panel).
+2. Once DNS is active on Cloudflare, go to the Pages project → Custom domains → Add a domain → enter `myrmekes.co.uk` (and `www.myrmekes.co.uk` if wanted). Cloudflare adds the required DNS record automatically.
+3. Wait for the SSL certificate to provision (usually a few minutes). The site is then live at `https://myrmekes.co.uk`.
+
+## Still to do (owned by Duncan, not covered by this build)
+
+- Paste the HubSpot form embed code into `contact.html`, replacing the comment placeholder and the `.contact-placeholder` block.
+- Fill in the phone number and address `[TODO: ...]` placeholders in `contact.html`.
+- Set up a working mailbox for `info@myrmekes.co.uk` (or swap in the real address) before pointing prospects at it — a contact form with no reply-able inbox behind it is worse than no form.
