@@ -34,6 +34,8 @@ git push -u origin main
 
 ## Still to do (owned by Duncan, not covered by this build)
 
-- Paste the HubSpot form embed code into `contact.html`, replacing the comment placeholder and the `.contact-placeholder` block.
+- Paste the HubSpot form embed code into `contact.html`, replacing the comment placeholder and the `.contact-placeholder` block. **When you do:** HubSpot forms set cookies, so a cookie consent banner becomes required, and the "no cookies" statements in `privacy.html` must be updated (there's an HTML comment in that file marking exactly where).
 - Fill in the phone number and address `[TODO: ...]` placeholders in `contact.html`.
+- Fill in the company registration `[TODO: ...]` placeholders (legal entity name, company number, registered office) in the footer of every page, plus `privacy.html` and `terms.html` — from Companies House.
+- Have `privacy.html` and `terms.html` reviewed by a solicitor before trading in earnest — they are structured templates, not legal advice.
 - Set up a working mailbox for `info@myrmekes.co.uk` (or swap in the real address) before pointing prospects at it — a contact form with no reply-able inbox behind it is worse than no form.
