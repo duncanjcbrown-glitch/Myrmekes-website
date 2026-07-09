@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Myrmekes — IT Engineering Resources, Support Contracts & Fulfilment</title>
 <meta name="description" content="Myrmekes supplies IT engineering resources, support contracts, and fulfilment to end users, delivered by Cantel's engineers.">
-<link rel="icon" type="image/png" href="assets/ant-icon-teal.png">
+<link rel="icon" type="image/png" href="assets/myrmekes-icon-teal.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.html" class="brand">
-      <img src="assets/ant-icon-teal.png" alt="" class="brand-icon" width="36" height="36">
+      <img src="assets/myrmekes-icon-teal.png" alt="" class="brand-icon" width="36" height="36">
       <span class="brand-text">
         <span class="brand-name">Myrmekes</span>
-        <span class="brand-tagline">Small but mighty</span>
+        <span class="brand-tagline">Multi Sumus</span>
       </span>
     </a>
     <nav class="site-nav">
@@ -23,6 +23,7 @@
       <a href="support-contracts.html">Support Contracts</a>
       <a href="fulfilment.html">Fulfilment</a>
       <a href="security-appliances.html">Security Appliances</a>
+      <a href="technology.html">Technology</a>
       <a href="contact.html" class="btn btn-primary">Contact</a>
     </nav>
   </div>
@@ -31,7 +32,7 @@
 <main>
 <section class="hero">
   <div class="container hero-inner">
-    <div class="hero-copy">
+    <div class="hero-copy reveal">
       <h1>IT engineering resources, support contracts, and fulfilment — for end users.</h1>
       <p>Myrmekes supplies the engineering hands, response-time commitments, and hardware fulfilment that keep your estate running, delivered by Cantel's certified engineers.</p>
       <div class="badge-strip">
@@ -39,18 +40,30 @@
         <span class="badge">8hr response</span>
         <span class="badge">Next business day</span>
       </div>
-      <a href="contact.html" class="btn btn-primary">Get a quote</a>
+      <form class="search-box" action="technology.html" method="get" role="search">
+        <span class="search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" name="q" data-search-input placeholder="Struggling with a specific vendor or system? Search it…" aria-label="Search for a technology or vendor">
+      </form>
+      <p class="search-hint">Press <kbd>/</kbd> to search, or press Enter</p>
+      <p style="margin-top:20px;"><a href="contact.html" class="btn btn-primary">Get a quote</a></p>
     </div>
-    <div class="hero-image">
+    <div class="hero-image reveal">
       <img src="assets/hero-ant-bridge.jpg" alt="Weaver ants forming a bridge between two leaves, working together" width="1600" height="1062">
     </div>
   </div>
 </section>
 
-<section class="page-section">
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Cisco</span><span>Microsoft</span><span>VMware</span><span>Fortinet</span><span>Palo Alto</span><span>NetApp</span><span>Veeam</span><span>Aruba</span><span>Dell</span><span>HPE</span><span>Juniper</span><span>IBM</span><span>Rubrik</span><span>Watchguard</span><span>McAfee</span>
+    <span>Cisco</span><span>Microsoft</span><span>VMware</span><span>Fortinet</span><span>Palo Alto</span><span>NetApp</span><span>Veeam</span><span>Aruba</span><span>Dell</span><span>HPE</span><span>Juniper</span><span>IBM</span><span>Rubrik</span><span>Watchguard</span><span>McAfee</span>
+  </div>
+</div>
+
+<section class="page-section reveal">
   <div class="container">
     <h2>What we do</h2>
-    <div class="card-grid">
+    <div class="bento-grid">
       <div class="card">
         <h3>Capabilities</h3>
         <p>Day-to-day estate engineering: device deployment, racking and stacking, EUC through to the datacentre, covering the vendor stack you already run.</p>
@@ -70,7 +83,13 @@
   </div>
 </section>
 
-<section class="page-section">
+<section class="page-section brand-moment reveal">
+  <div class="container">
+    <img src="assets/myrmekes-lockup-color.png" alt="Myrmekes — Multi Sumus">
+  </div>
+</section>
+
+<section class="page-section reveal">
   <div class="container">
     <div class="card" style="max-width:640px;">
       <h3>Security appliances</h3>
@@ -84,10 +103,10 @@
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="brand">
-      <img src="assets/ant-icon-white.png" alt="" class="brand-icon" width="32" height="32">
+      <img src="assets/myrmekes-icon-white.png" alt="" class="brand-icon" width="32" height="32">
       <span class="brand-text">
         <span class="brand-name">Myrmekes</span>
-        <span class="brand-tagline">Small but mighty</span>
+        <span class="brand-tagline">Multi Sumus</span>
       </span>
     </div>
     <nav class="footer-nav">
@@ -96,6 +115,7 @@
       <a href="support-contracts.html">Support Contracts</a>
       <a href="fulfilment.html">Fulfilment</a>
       <a href="security-appliances.html">Security Appliances</a>
+      <a href="technology.html">Technology</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div>
@@ -104,5 +124,6 @@
     </div>
   </div>
 </footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
