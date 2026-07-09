@@ -247,3 +247,16 @@ table.sla-table tr:last-child td { border-bottom: none; }
 .tech-card .tech-tags { font-size: 0.8rem; color: #6b7280; }
 .tech-no-results { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; text-align: center; margin-top: 24px; }
 .tech-no-results p { max-width: none; margin-bottom: 12px; }
+
+/* Trust band (Home) */
+.trust-band { background: var(--white); padding: 28px 0; }
+.trust-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; text-align: center; }
+.trust-stat { display: flex; flex-direction: column; gap: 4px; }
+.trust-num { font-family: var(--heading-font); font-weight: 800; font-size: 1.35rem; color: var(--teal-dark); }
+.trust-label { font-size: 0.8rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+.trust-attribution { text-align: center; margin-top: 14px; font-size: 0.85rem; color: var(--teal); font-weight: 600; }
+
+/* Footer legal block */
+.footer-legal { padding: 0 24px 28px; font-size: 0.75rem; opacity: 0.65; }
+.footer-legal p { margin: 4px 0; }
+.footer-legal a { color: var(--white); text-decoration: underline; }
