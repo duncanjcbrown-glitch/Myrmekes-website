@@ -13,7 +13,7 @@ const VENDORS = [
   { name: "Dell", categories: ["Enterprise Networking", "Server and Storage Infrastructure", "Wireless"] },
   { name: "Draytek", categories: ["Enterprise Networking"] },
   { name: "Dynamics 365", categories: [] },
-  { name: "EMC", categories: ["Storage"] },
+  { name: "Dell EMC", categories: ["Server and Storage Infrastructure"] },
   { name: "Extreme", categories: ["Enterprise Networking", "Wireless"] },
   { name: "Fortinet", categories: ["Security"] },
   { name: "Fujitsu", categories: ["Server and Storage Infrastructure"] },
