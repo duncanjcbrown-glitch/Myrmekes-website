@@ -201,6 +201,11 @@ section.page-section { padding: 56px 0; }
   .hero-copy h1 { font-size: 1.9rem; }
 }
 
+/* Partner logo strip */
+.partner-strip { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 24px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin: 16px 0; }
+.partner-strip-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; font-weight: 700; }
+.partner-strip img { display: block; width: auto; }
+
 /* SLA table (Support Contracts page) */
 table.sla-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--white); border-radius: var(--radius); overflow: hidden; }
 table.sla-table th, table.sla-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); }
