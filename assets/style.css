@@ -1,4 +1,20 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --heading-font: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --bg: #F7F8FA;
   --teal: #009CBD;
   --teal-dark: #002F39;
@@ -30,7 +46,7 @@ a:hover { text-decoration: underline; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .brand-icon { display: block; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand-name { font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 1.1rem; color: var(--teal-dark); }
+.brand-name { font-family: var(--heading-font); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 1.1rem; color: var(--teal-dark); }
 .brand-tagline { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); }
 .site-nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
 .site-nav a { color: var(--text); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
@@ -89,7 +105,7 @@ a:hover { text-decoration: underline; }
 .hero .container { position: relative; z-index: 1; }
 .hero-inner { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
 .hero-copy { flex: 1 1 420px; }
-.hero-copy h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; color: var(--teal-dark); }
+.hero-copy h1 { font-family: var(--heading-font); font-size: 2.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px; color: var(--teal-dark); }
 .hero-copy p { font-size: 1.15rem; margin-bottom: 24px; max-width: 46ch; }
 .hero-image { flex: 1 1 380px; }
 .hero-image img { width: 100%; height: auto; border-radius: var(--radius); display: block; }
@@ -134,9 +150,9 @@ a:hover { text-decoration: underline; }
 
 /* Page sections */
 section.page-section { padding: 56px 0; }
-.page-section h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.01em; color: var(--teal-dark); margin-bottom: 16px; }
-.page-section h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; color: var(--teal-dark); margin: 32px 0 16px; }
-.page-section h3 { font-size: 1.15rem; color: var(--teal-dark); margin: 24px 0 8px; }
+.page-section h1 { font-family: var(--heading-font); font-size: 2rem; font-weight: 800; letter-spacing: -0.01em; color: var(--teal-dark); margin-bottom: 16px; }
+.page-section h2 { font-family: var(--heading-font); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; color: var(--teal-dark); margin: 32px 0 16px; }
+.page-section h3 { font-family: var(--heading-font); font-weight: 700; font-size: 1.15rem; color: var(--teal-dark); margin: 24px 0 8px; }
 .page-section p { margin-bottom: 16px; max-width: 70ch; }
 .page-section ul { margin: 0 0 16px 20px; }
 .page-section li { margin-bottom: 6px; }
