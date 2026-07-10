@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myrmekes.co.uk/sitemap.xml

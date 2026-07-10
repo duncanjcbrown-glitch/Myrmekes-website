@@ -1,0 +1,19 @@
+# Myrmekes
+
+> Myrmekes supplies IT engineering resources, support contracts, and hardware
+> fulfilment to end users across the UK, delivered by Cantel's engineers.
+> Multi-vendor hardware support (Cisco, Microsoft, VMware, Dell, Dell EMC, HPE,
+> NetApp, Fortinet and ~50 more), response tiers from 2-hour onsite to next
+> business day, post-warranty and end-of-service-life (EOSL) support, and EUC
+> device repair. UK-based engineers across six depots, coverage in 100+
+> countries with trusted affiliates. Tagline: Multi Sumus ("we are many").
+
+## Key pages
+
+- [Services](https://myrmekes.co.uk/services.html): rack and stack, break/fix, post-warranty support, migrations, rollouts, IMACD, ITAD, network installation, and more, across eight service pillars.
+- [Technology directory](https://myrmekes.co.uk/technology.html): searchable list of 56 supported vendors and technologies.
+- [Support Contracts](https://myrmekes.co.uk/support-contracts.html): SLA tiers and how engagements work.
+- [EUC Device Support](https://myrmekes.co.uk/euc-support.html): laptop/tablet/mobile repair cover, 72-hour turnaround.
+- [FAQ](https://myrmekes.co.uk/faq.html): third-party maintenance, EOSL, exclusions, cleared engineers.
+- [Case Studies](https://myrmekes.co.uk/case-studies.html): sector-anonymized delivery examples.
+- [Contact](https://myrmekes.co.uk/contact.html): info@myrmekes.co.uk
