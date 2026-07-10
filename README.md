@@ -39,3 +39,4 @@ git push -u origin main
 - Fill in the company registration `[TODO: ...]` placeholders (legal entity name, company number, registered office) in the footer of every page, plus `privacy.html` and `terms.html` — from Companies House.
 - Have `privacy.html` and `terms.html` reviewed by a solicitor before trading in earnest — they are structured templates, not legal advice.
 - Set up a working mailbox for `info@myrmekes.co.uk` (or swap in the real address) before pointing prospects at it — a contact form with no reply-able inbox behind it is worse than no form.
+- Supply clean (non-watermarked, no baked-in checkerboard) logo files for Microsoft, HPE, and NetApp so they can join the vendor logo marquee, and confirm vendor logo usage at go-live (nominative use in a "vendors we support" strip is standard practice, but final sign-off sits with Duncan).
