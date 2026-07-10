@@ -29,6 +29,43 @@
     return div.innerHTML;
   }
 
+  var PILLAR_BY_CATEGORY = {
+    "Enterprise Networking": "networks",
+    "Wireless": "networks",
+    "Routing and Switching": "networks",
+    "Data Centre Networking": "cloud-datacentres",
+    "Server and Storage Infrastructure": "cloud-datacentres",
+    "Storage": "cloud-datacentres",
+    "Server": "cloud-datacentres",
+    "Server Virtualisation": "cloud-datacentres",
+    "Data Centre Virtualisation": "cloud-datacentres",
+    "VMware Cloud Services": "cloud-datacentres",
+    "Public Cloud": "cloud-datacentres",
+    "Server Core Infrastructure and Management": "cloud-datacentres",
+    "Backup and Recovery": "cloud-datacentres",
+    "SQL": "cloud-datacentres",
+    "Security": "cyber-security",
+    "Unified Collaboration": "voice-comms",
+    "Mobility": "fulfilment",
+    "OS": "fulfilment",
+    "Desktop Computing": "fulfilment",
+    "Device and Application Management": "fulfilment",
+    "EUC/Desktop Virtualisation": "fulfilment",
+    "Intune": "fulfilment",
+    "SCCM": "fulfilment",
+    "Workspace One": "fulfilment",
+    "Application Development": "service-desk",
+    "Power Platform": "service-desk"
+  };
+
+  function servicesLink(vendor) {
+    for (var i = 0; i < vendor.categories.length; i++) {
+      var anchor = PILLAR_BY_CATEGORY[vendor.categories[i]];
+      if (anchor) return "services.html#" + anchor;
+    }
+    return "services.html";
+  }
+
   function renderVendorCard(vendor) {
     var tags = vendor.categories.length ? vendor.categories.join(", ") : "General";
     return (
@@ -36,6 +73,7 @@
       "<h4>" + escapeHtml(vendor.name) + "</h4>" +
       '<p class="tech-tags">' + escapeHtml(tags) + "</p>" +
       '<a href="' + techLink(vendor.name) + '" class="btn btn-primary">Get help with ' + escapeHtml(vendor.name) + "</a>" +
+      '<p class="tech-tags" style="margin-top:8px;"><a href="' + servicesLink(vendor) + '">Related services &rarr;</a></p>' +
       "</div>"
     );
   }
