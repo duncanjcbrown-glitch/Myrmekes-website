@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Myrmekes</title>
-<meta name="description" content="Get in touch with Myrmekes about IT engineering resources, support contracts, or fulfilment.">
+<title>Talk to Us — Myrmekes</title>
+<meta name="description" content="Book a 15-minute scoping call about your estate — engineering resource, support contracts, hardware fulfilment, or device repair.">
 <link rel="icon" type="image/png" href="assets/myrmekes-icon-teal.png">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
@@ -38,7 +38,7 @@
       <a href="technology.html">Technology</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About</a>
-      <a href="contact.html" class="btn btn-primary">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Book a call</a>
     </nav>
   </div>
 </header>
@@ -46,26 +46,42 @@
 <main>
 <section class="page-section reveal">
   <div class="container">
-    <h1>Contact</h1>
+    <h1>Talk to us about your estate</h1>
     <p data-tech-banner hidden></p>
-    <p>Tell us what you need and we'll get back to you.</p>
+    <p>The fastest way to scope anything is a 15-minute call. No ticket portal, no sales maze — you'll speak to someone who understands infrastructure support.</p>
+    <p class="search-hint">If we can help, we'll tell you how. If we can't, we'll say so quickly.</p>
 
     <div class="contact-grid">
       <div>
         <!--
           HubSpot form embed goes here. Replace this comment block and the
-          placeholder <div> below with the embed code from your HubSpot
-          account (Marketing > Forms > [your form] > Embed). Until then, the
-          mailto button is the working fallback.
+          call form below with the embed code from your HubSpot account
+          (Marketing > Forms > [your form] > Embed). Until then, the form
+          assembles a pre-filled email via mailto: as the working fallback.
         -->
-        <div class="contact-placeholder">
-          <p><strong>Contact form coming soon.</strong></p>
-          <p>In the meantime, email us directly:</p>
-          <a href="mailto:info@myrmekes.co.uk" class="btn btn-primary">Email info@myrmekes.co.uk</a>
-        </div>
+        <form class="call-form" id="call-form">
+          <label>Name<br><input type="text" name="name" required></label>
+          <label>Company<br><input type="text" name="company"></label>
+          <label>Email<br><input type="email" name="email" required></label>
+          <label>Phone<br><input type="tel" name="phone"></label>
+          <label>What do you need help with?<br>
+            <select name="need">
+              <option>Hardware going end-of-service-life</option>
+              <option>Break/fix or SLA cover</option>
+              <option>Engineers onsite</option>
+              <option>Hardware sourced or refreshed</option>
+              <option>Laptop / tablet repair cover</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>What's happening?<br><textarea name="details" rows="4" placeholder="A sentence or two is plenty — we'll dig into the rest on the call."></textarea></label>
+          <label>Preferred time for a call (optional)<br><input type="text" name="time" placeholder="e.g. weekday mornings"></label>
+          <button type="submit" class="btn btn-primary">Request a call</button>
+          <p class="search-hint">Submitting opens a pre-filled email in your mail app — nothing is stored on this site.</p>
+        </form>
       </div>
       <div class="contact-details">
-        <h3>Get in touch</h3>
+        <h3>Prefer email?</h3>
         <p>Email: <a href="mailto:info@myrmekes.co.uk">info@myrmekes.co.uk</a></p>
         <p>Phone: [TODO: add phone number]</p>
         <p>Address: [TODO: add registered/trading address]</p>
@@ -95,7 +111,7 @@
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">Talk to us</a>
     </nav>
     <div>
       <p class="footer-contact">Email <a href="mailto:info@myrmekes.co.uk">info@myrmekes.co.uk</a></p>

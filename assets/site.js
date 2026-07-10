@@ -50,4 +50,28 @@
       }
     }
   }
+
+  // Call-request form: assemble a pre-filled email via mailto (HubSpot pending).
+  var callForm = document.getElementById("call-form");
+  if (callForm) {
+    callForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = callForm.elements;
+      var techParam = new URLSearchParams(window.location.search).get("tech");
+      var lines = [
+        "Name: " + f.name.value,
+        "Company: " + (f.company.value || "-"),
+        "Email: " + f.email.value,
+        "Phone: " + (f.phone.value || "-"),
+        "Help needed with: " + f.need.value + (techParam ? " (arrived via: " + techParam + ")" : ""),
+        "",
+        "What's happening:",
+        f.details.value || "-",
+        "",
+        "Preferred call time: " + (f.time.value || "any")
+      ];
+      var subject = "Call request: " + f.need.value + (f.company.value ? " — " + f.company.value : "");
+      window.location.href = "mailto:info@myrmekes.co.uk?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+    });
+  }
 })();

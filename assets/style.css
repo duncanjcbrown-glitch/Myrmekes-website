@@ -265,3 +265,16 @@ table.sla-table tr:last-child td { border-bottom: none; }
 .marquee-track img { height: 32px; width: auto; display: block; filter: grayscale(1); opacity: 0.7; transition: filter 0.2s ease, opacity 0.2s ease; }
 .marquee-track img:hover { filter: none; opacity: 1; }
 .marquee-track { align-items: center; }
+
+/* Call-request form (Talk to us page) */
+.call-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.call-form label { font-weight: 600; font-size: 0.9rem; color: var(--teal-dark); }
+.call-form input, .call-form select, .call-form textarea {
+  width: 100%; margin-top: 4px; padding: 10px 12px; border: 1px solid var(--border);
+  border-radius: var(--radius); font-family: inherit; font-size: 0.95rem; background: var(--bg);
+  font-weight: 400; color: var(--text);
+}
+.call-form input:focus, .call-form select:focus, .call-form textarea:focus {
+  outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,156,189,0.15);
+}
+.call-form button { align-self: flex-start; border: none; cursor: pointer; font-size: 1rem; font-family: inherit; }
