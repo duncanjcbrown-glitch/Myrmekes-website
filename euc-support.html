@@ -31,16 +31,15 @@
 </script>
 </head>
 <body>
-<header class="site-header">
+<header class="site-header" data-header>
   <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <img src="assets/myrmekes-lockup-color.png" alt="Myrmekes — Multi Sumus" class="brand-lockup">
+    <a href="index.html" class="brand" aria-label="Myrmekes home">
+      <img src="assets/myrmekes-lockup-color.png" alt="Myrmekes &mdash; Multi Sumus" class="brand-lockup">
     </a>
-    <nav class="site-nav">
-      <a href="capabilities.html">Capabilities</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+    <nav class="site-nav" id="site-nav">
       <a href="services.html">Services</a>
       <a href="support-contracts.html">Support Contracts</a>
-      <a href="fulfilment.html">Fulfilment</a>
       <a href="technology.html">Technology</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About</a>
@@ -93,36 +92,43 @@
 </main>
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="brand">
-      <img src="assets/myrmekes-icon-white.png" alt="" class="brand-icon" width="32" height="32">
-      <span class="brand-text">
-        <span class="brand-name">Myrmekes</span>
-        <span class="brand-tagline">Multi Sumus</span>
-      </span>
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="capabilities.html">Capabilities</a>
-      <a href="services.html">Services</a>
-      <a href="support-contracts.html">Support Contracts</a>
-      <a href="fulfilment.html">Fulfilment</a>
-      <a href="security-appliances.html">Security Appliances</a>
-      <a href="technology.html">Technology</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about.html">About</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Talk to us</a>
-    </nav>
     <div>
+      <div class="brand">
+        <img src="assets/myrmekes-icon-white.png" alt="" class="brand-icon" width="34" height="34">
+        <span class="brand-text">
+          <span class="brand-name">Myrmekes</span>
+          <span class="brand-tagline">Multi Sumus</span>
+        </span>
+      </div>
+      <p class="footer-blurb">Independent IT engineering, hardware support and fulfilment for enterprise estates &mdash; datacentre to desktop.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Explore</p>
+      <nav class="footer-nav">
+        <a href="services.html">Services</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="support-contracts.html">Support Contracts</a>
+        <a href="fulfilment.html">Fulfilment</a>
+        <a href="security-appliances.html">Security Appliances</a>
+        <a href="technology.html">Technology</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Talk to us</a>
+      </nav>
+    </div>
+    <div>
+      <p class="footer-col-title">Talk to us</p>
       <p class="footer-contact">Email <a href="mailto:info@myrmekes.co.uk">info@myrmekes.co.uk</a></p>
+      <p style="margin-top:12px;"><a href="contact.html" class="btn btn-ghost-light">Book a scoping call</a></p>
       <p class="footer-copyright">&copy; 2026 Myrmekes. Services delivered by Cantel's engineers.</p>
     </div>
   </div>
-  <div class="container">
-    <div class="partner-strip">
+  <div class="footer-partner">
+    <div class="container partner-strip">
       <span class="partner-strip-label">Delivered through our partnership with</span>
-      <img src="assets/partner-logo-cantel.png" alt="Cantel" height="28">
-      <img src="assets/partner-logo-cloudcoco.png" alt="Cloud CoCo" height="28">
+      <img src="assets/partner-logo-cantel.png" alt="Cantel" height="26">
+      <img src="assets/partner-logo-cloudcoco.png" alt="Cloud CoCo" height="26">
     </div>
   </div>
   <div class="container footer-legal">

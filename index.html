@@ -22,16 +22,15 @@
 </script>
 </head>
 <body>
-<header class="site-header">
+<header class="site-header" data-header>
   <div class="container header-inner">
-    <a href="index.html" class="brand">
-      <img src="assets/myrmekes-lockup-color.png" alt="Myrmekes — Multi Sumus" class="brand-lockup">
+    <a href="index.html" class="brand" aria-label="Myrmekes home">
+      <img src="assets/myrmekes-lockup-color.png" alt="Myrmekes &mdash; Multi Sumus" class="brand-lockup">
     </a>
-    <nav class="site-nav">
-      <a href="capabilities.html">Capabilities</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+    <nav class="site-nav" id="site-nav">
       <a href="services.html">Services</a>
       <a href="support-contracts.html">Support Contracts</a>
-      <a href="fulfilment.html">Fulfilment</a>
       <a href="technology.html">Technology</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="about.html">About</a>
@@ -44,8 +43,9 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-copy reveal">
+      <span class="eyebrow">Independent IT hardware support &amp; engineering</span>
       <h1>Enterprise hardware to support, repair, replace — or keep alive past its warranty?</h1>
-      <p>Myrmekes gives IT teams engineering resource, support contracts, and hardware fulfilment across multi-vendor estates — one point of contact, from datacentre to desktop.</p>
+      <p class="hero-sub">Myrmekes gives IT teams engineering resource, support contracts, and hardware fulfilment across multi-vendor estates — one point of contact, from datacentre to desktop.</p>
       <div class="badge-strip">
         <span class="badge">4hr response</span>
         <span class="badge">8hr response</span>
@@ -56,11 +56,19 @@
         <input type="search" name="q" data-search-input placeholder="Check supported vendors — search yours…" aria-label="Search for a technology or vendor">
       </form>
       <p class="search-hint">Press <kbd>/</kbd> to search, or press Enter</p>
-      <p style="margin-top:20px;"><a href="contact.html" class="btn btn-primary">Book a 15-minute scoping call</a></p>
-      <p class="search-hint">If we can help, we'll tell you how. If we can't, we'll say so quickly.</p>
+      <div class="hero-cta-row">
+        <a href="contact.html" class="btn btn-primary">Book a 15-minute scoping call <span class="arw" aria-hidden="true">&rarr;</span></a>
+        <a href="technology.html" class="btn btn-outline">See what we support</a>
+      </div>
+      <p class="hero-reassure">If we can help, we'll tell you how. If we can't, we'll say so quickly.</p>
     </div>
-    <div class="hero-image reveal">
+    <div class="hero-figure reveal">
       <img src="assets/hero-ant-bridge.jpg" alt="Weaver ants forming a bridge between two leaves, working together" width="1600" height="1062">
+      <div class="hero-float">
+        <span class="hf-num">4hr</span>
+        <span class="hf-rule" aria-hidden="true"></span>
+        <span class="hf-label">Fastest onsite response tier — down to next business day where that fits better.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -71,21 +79,50 @@
       <div class="trust-stat"><span class="trust-num">30 yrs</span><span class="trust-label">Delivery heritage</span></div>
       <div class="trust-stat"><span class="trust-num">ISO 9001 &amp; 27001</span><span class="trust-label">Certified quality &amp; security</span></div>
       <div class="trust-stat"><span class="trust-num">B Corp</span><span class="trust-label">Certified B Corporation</span></div>
-      <div class="trust-stat"><span class="trust-num">100+</span><span class="trust-label">Countries covered with trusted affiliates</span></div>
+      <div class="trust-stat"><span class="trust-num">100+</span><span class="trust-label">Countries via trusted affiliates</span></div>
     </div>
-    <p class="trust-attribution">Via our delivery partner, Cantel — whose engineers deliver Myrmekes support.</p>
+    <p class="trust-attribution">Via our delivery partner, <strong>Cantel</strong> — whose engineers deliver Myrmekes support.</p>
   </div>
 </section>
 
 <section class="page-section reveal">
   <div class="container">
-    <h2>What's brought you here?</h2>
-    <div class="tech-grid">
-      <div class="tech-card"><h4>I have hardware going EOSL</h4><p class="tech-tags">The OEM is ending support, but the kit still works. Keep it running without a forced refresh.</p><a href="contact.html?tech=EOSL%20Hardware%20Support">Talk this through &rarr;</a></div>
-      <div class="tech-card"><h4>I need break/fix or SLA cover</h4><p class="tech-tags">Response-time commitments from 2-hour onsite to next business day, shaped to each system.</p><a href="contact.html?tech=Break%2FFix%20and%20SLA%20Cover">Talk this through &rarr;</a></div>
-      <div class="tech-card"><h4>I need engineers onsite</h4><p class="tech-tags">Field engineering, smart hands, and cleared personnel — dispatched to your sites.</p><a href="contact.html?tech=Onsite%20Engineers">Talk this through &rarr;</a></div>
-      <div class="tech-card"><h4>I need hardware sourced or refreshed</h4><p class="tech-tags">From single boxes to multi-site rollouts, staged and configured before they arrive.</p><a href="contact.html?tech=Hardware%20Sourcing%20and%20Refresh">Talk this through &rarr;</a></div>
-      <div class="tech-card"><h4>I need laptop or tablet repair cover</h4><p class="tech-tags">One annual fee for the whole fleet, devices back within 72 hours.</p><a href="contact.html?tech=EUC%20Device%20Support">Talk this through &rarr;</a></div>
+    <div class="section-head">
+      <span class="eyebrow">Start here</span>
+      <h2>What's brought you here?</h2>
+      <p class="lead">Tell us which of these sounds like you — each is a short conversation away from a plan.</p>
+    </div>
+    <div class="entry-grid">
+      <a class="entry-card" href="contact.html?tech=EOSL%20Hardware%20Support">
+        <span class="entry-idx">01</span>
+        <h4>I have hardware going EOSL</h4>
+        <p>The OEM is ending support, but the kit still works. Keep it running without a forced refresh.</p>
+        <span class="link-arrow">Talk this through</span>
+      </a>
+      <a class="entry-card" href="contact.html?tech=Break%2FFix%20and%20SLA%20Cover">
+        <span class="entry-idx">02</span>
+        <h4>I need break/fix or SLA cover</h4>
+        <p>Response-time commitments from 2-hour onsite to next business day, shaped to each system.</p>
+        <span class="link-arrow">Talk this through</span>
+      </a>
+      <a class="entry-card" href="contact.html?tech=Onsite%20Engineers">
+        <span class="entry-idx">03</span>
+        <h4>I need engineers onsite</h4>
+        <p>Field engineering, smart hands, and cleared personnel — dispatched to your sites.</p>
+        <span class="link-arrow">Talk this through</span>
+      </a>
+      <a class="entry-card" href="contact.html?tech=Hardware%20Sourcing%20and%20Refresh">
+        <span class="entry-idx">04</span>
+        <h4>I need hardware sourced or refreshed</h4>
+        <p>From single boxes to multi-site rollouts, staged and configured before they arrive.</p>
+        <span class="link-arrow">Talk this through</span>
+      </a>
+      <a class="entry-card" href="contact.html?tech=EUC%20Device%20Support">
+        <span class="entry-idx">05</span>
+        <h4>I need laptop or tablet repair cover</h4>
+        <p>One annual fee for the whole fleet, devices back within 72 hours.</p>
+        <span class="link-arrow">Talk this through</span>
+      </a>
     </div>
   </div>
 </section>
@@ -97,29 +134,47 @@
   </div>
 </div>
 
-<section class="page-section reveal">
+<section class="page-section band-tint reveal">
   <div class="container">
     <div class="partner-strip">
       <span class="partner-strip-label">Delivered through our partnership with</span>
       <img src="assets/partner-logo-cantel.png" alt="Cantel" height="32">
       <img src="assets/partner-logo-cloudcoco.png" alt="Cloud CoCo" height="32">
     </div>
-    <h2>What we do</h2>
+    <div class="section-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Three ways we keep your estate running</h2>
+    </div>
     <div class="bento-grid">
-      <div class="card">
+      <div class="card card-feature">
         <h3>Capabilities</h3>
         <p>Day-to-day estate engineering: device deployment, racking and stacking, EUC through to the datacentre, covering the vendor stack you already run.</p>
-        <a href="capabilities.html">See our capabilities &rarr;</a> <a href="services.html">Browse all services &rarr;</a>
+        <ul class="feature-tags">
+          <li>EUC &amp; desktop</li>
+          <li>Enterprise &amp; datacentre networking</li>
+          <li>Server, storage &amp; virtualisation</li>
+          <li>Wireless &amp; mobility</li>
+          <li>Backup &amp; recovery</li>
+          <li>Unified collaboration</li>
+          <li>Security</li>
+        </ul>
+        <div class="card-links">
+          <a class="link-arrow" href="capabilities.html">See our capabilities</a>
+          <a class="link-arrow" href="services.html">Browse all services</a>
+        </div>
       </div>
       <div class="card">
         <h3>Support Contracts</h3>
         <p>4hr, 8hr, and next-business-day response tiers, backed by certified specialist engineers and UK-based multi-depot coverage.</p>
-        <a href="support-contracts.html">View SLA tiers &rarr;</a>
+        <div class="card-links"><a class="link-arrow" href="support-contracts.html">View SLA tiers</a></div>
       </div>
       <div class="card">
         <h3>Fulfilment</h3>
         <p>Peripherals through to co-located security, server, and storage — sourced through our partner network.</p>
-        <a href="fulfilment.html">Explore fulfilment &rarr;</a> <a href="euc-support.html">Device repair &amp; EUC support &rarr;</a>
+        <div class="card-links">
+          <a class="link-arrow" href="fulfilment.html">Explore fulfilment</a>
+          <a class="link-arrow" href="euc-support.html">Device repair &amp; EUC</a>
+        </div>
       </div>
     </div>
   </div>
@@ -127,15 +182,18 @@
 
 <section class="page-section reveal">
   <div class="container">
-    <h2>Who this is for</h2>
-    <ul>
-      <li><strong>IT directors and infrastructure managers</strong> keeping multi-vendor estates running against real SLAs.</li>
-      <li><strong>Procurement teams</strong> who need hardware sourced, staged, and delivered without the runaround.</li>
-      <li><strong>MSPs</strong> that need field coverage, smart hands, or bench depth beyond their own team.</li>
-      <li><strong>Finance teams</strong> extending asset life past the OEM's refresh cycle instead of paying for it.</li>
-      <li><strong>Anyone with kit going end-of-service-life</strong> who'd rather keep it running than replace it on the manufacturer's schedule.</li>
-    </ul>
-    <p><a href="contact.html" class="btn btn-primary">Book a 15-minute scoping call</a></p>
+    <div class="section-head">
+      <span class="eyebrow">Who this is for</span>
+      <h2>Built for the people who keep infrastructure alive</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-item"><h4>IT directors &amp; infrastructure managers</h4><p>Keeping multi-vendor estates running against real SLAs.</p></div>
+      <div class="audience-item"><h4>Procurement teams</h4><p>Hardware sourced, staged and delivered without the runaround.</p></div>
+      <div class="audience-item"><h4>MSPs</h4><p>Field coverage, smart hands and bench depth beyond your own team.</p></div>
+      <div class="audience-item"><h4>Finance teams</h4><p>Extending asset life past the OEM's refresh cycle instead of paying for it.</p></div>
+      <div class="audience-item"><h4>Kit going end-of-service-life</h4><p>Keep it running rather than replace it on the manufacturer's schedule.</p></div>
+    </div>
+    <p style="margin-top:28px;"><a href="contact.html" class="btn btn-primary">Book a 15-minute scoping call <span class="arw" aria-hidden="true">&rarr;</span></a></p>
   </div>
 </section>
 
@@ -144,7 +202,7 @@
     <div class="global-support-section" style="width:100%;">
       <div class="support-globe-panel">
         <div class="support-globe-copy">
-          <p class="eyebrow">Global coverage</p>
+          <span class="eyebrow">Global coverage</span>
           <h2>Support that follows your estate</h2>
           <p>Through our delivery partner's network, support reaches 100+ countries with trusted affiliates. Drag the globe to explore where cover is in place.</p>
           <div class="support-globe-legend">
@@ -152,7 +210,7 @@
             <span><span class="legend-dot legend-partial"></span> Partially supported</span>
             <span><span class="legend-dot legend-none"></span> Not currently supported</span>
           </div>
-          <p style="margin-top:20px; font-size:0.85rem; color:#6b7280;">Coverage shown is indicative — exact reach for your sites is confirmed per engagement.</p>
+          <p style="margin-top:18px; font-size:0.85rem; color:var(--faint);">Coverage shown is indicative — exact reach for your sites is confirmed per engagement.</p>
         </div>
         <div id="global-support-globe" class="global-support-globe" aria-label="Interactive 3D globe showing global support coverage"></div>
       </div>
@@ -163,52 +221,73 @@
 <section class="page-section brand-moment reveal">
   <div class="container">
     <img src="assets/myrmekes-lockup-color.png" alt="Myrmekes — Multi Sumus">
+    <p class="brand-motto">Multi Sumus — <em>we are many</em>. Small units, precisely coordinated, covering the whole estate.</p>
   </div>
 </section>
 
-<section class="page-section reveal">
+<section class="page-section tight reveal">
   <div class="container">
-    <div class="card" style="max-width:640px;">
+    <div class="card" style="max-width:680px;">
       <h3>Security appliances</h3>
       <p>A re-emerging capability as we rebuild OEM partnerships. If you need security appliance sourcing or support, ask us — we're actively bringing this back online.</p>
-      <a href="security-appliances.html">Ask about security appliances &rarr;</a>
+      <div class="card-links"><a class="link-arrow" href="security-appliances.html">Ask about security appliances</a></div>
     </div>
+  </div>
+</section>
+
+<section class="page-section band-ink cta-band reveal">
+  <div class="container">
+    <span class="eyebrow eyebrow--onDark">No ticket portal. No sales maze.</span>
+    <h2>Tell us what you're dealing with.</h2>
+    <p class="lead">You'll speak to someone who understands infrastructure support — not a call centre. Send an asset list or just talk us through the estate.</p>
+    <div class="hero-cta-row">
+      <a href="contact.html" class="btn btn-primary">Book a 15-minute scoping call <span class="arw" aria-hidden="true">&rarr;</span></a>
+      <a href="technology.html" class="btn btn-ghost-light">Check supported vendors</a>
+    </div>
+    <p class="hero-reassure">If we can help, we'll tell you how. If we can't, we'll say so quickly.</p>
   </div>
 </section>
 </main>
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="brand">
-      <img src="assets/myrmekes-icon-white.png" alt="" class="brand-icon" width="32" height="32">
-      <span class="brand-text">
-        <span class="brand-name">Myrmekes</span>
-        <span class="brand-tagline">Multi Sumus</span>
-      </span>
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="capabilities.html">Capabilities</a>
-      <a href="services.html">Services</a>
-      <a href="support-contracts.html">Support Contracts</a>
-      <a href="fulfilment.html">Fulfilment</a>
-      <a href="security-appliances.html">Security Appliances</a>
-      <a href="technology.html">Technology</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="about.html">About</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Talk to us</a>
-    </nav>
     <div>
+      <div class="brand">
+        <img src="assets/myrmekes-icon-white.png" alt="" class="brand-icon" width="34" height="34">
+        <span class="brand-text">
+          <span class="brand-name">Myrmekes</span>
+          <span class="brand-tagline">Multi Sumus</span>
+        </span>
+      </div>
+      <p class="footer-blurb">Independent IT engineering, hardware support and fulfilment for enterprise estates &mdash; datacentre to desktop.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Explore</p>
+      <nav class="footer-nav">
+        <a href="services.html">Services</a>
+        <a href="capabilities.html">Capabilities</a>
+        <a href="support-contracts.html">Support Contracts</a>
+        <a href="fulfilment.html">Fulfilment</a>
+        <a href="security-appliances.html">Security Appliances</a>
+        <a href="technology.html">Technology</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Talk to us</a>
+      </nav>
+    </div>
+    <div>
+      <p class="footer-col-title">Talk to us</p>
       <p class="footer-contact">Email <a href="mailto:info@myrmekes.co.uk">info@myrmekes.co.uk</a></p>
+      <p style="margin-top:12px;"><a href="contact.html" class="btn btn-ghost-light">Book a scoping call</a></p>
       <p class="footer-copyright">&copy; 2026 Myrmekes. Services delivered by Cantel's engineers.</p>
     </div>
   </div>
-  <div class="container">
-    <div class="partner-strip">
+  <div class="footer-partner">
+    <div class="container partner-strip">
       <span class="partner-strip-label">Delivered through our partnership with</span>
-      <img src="assets/partner-logo-cantel.png" alt="Cantel" height="28">
-      <img src="assets/partner-logo-cloudcoco.png" alt="Cloud CoCo" height="28">
+      <img src="assets/partner-logo-cantel.png" alt="Cantel" height="26">
+      <img src="assets/partner-logo-cloudcoco.png" alt="Cloud CoCo" height="26">
     </div>
   </div>
   <div class="container footer-legal">
