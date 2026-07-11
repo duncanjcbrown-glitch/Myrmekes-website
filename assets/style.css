@@ -271,7 +271,18 @@ table.sla-table tr:last-child td { border-bottom: none; }
 .marquee-track img:hover { filter: none; opacity: 1; }
 .marquee-track img.logo-sm { padding: 4px 0; }
 .marquee-track img.logo-lg { width: 140px; }
+/* Logos whose source files carry no internal padding (trimmed to their mark)
+   are sized by height instead of the fixed box, so the mark fills the strip. */
+.marquee-track img.logo-fit { width: auto; height: auto; max-width: 150px; max-height: 34px; }
 .marquee-track { align-items: center; }
+
+/* WatchGuard and Fortinet ship as white-padded WebP; cropping their padding in
+   CSS (background-position over the known content rect) enlarges the mark
+   without re-encoding the source. */
+.marquee-track .vlogo { display: block; background-repeat: no-repeat; filter: grayscale(1); opacity: 0.7; transition: filter 0.2s ease, opacity 0.2s ease; }
+.marquee-track .vlogo:hover { filter: none; opacity: 1; }
+.vlogo-watchguard { width: 117.7px; height: 34px; background-image: url('vendor-logos/watchguard.webp'); background-size: 148.6px 148.6px; background-position: -15.45px -57.5px; }
+.vlogo-fortinet { width: 160px; height: 18.7px; background-image: url('vendor-logos/fortinet.webp'); background-size: 167.1px 146.6px; background-position: -3.48px -63.64px; }
 
 /* Call-request form (Talk to us page) */
 .call-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
