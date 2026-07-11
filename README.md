@@ -39,3 +39,4 @@ git push -u origin main
 - Have `privacy.html` and `terms.html` reviewed by a solicitor before trading in earnest — they are structured templates, not legal advice.
 - Set up a working mailbox for `info@myrmekes.co.uk` (or swap in the real address) before pointing prospects at it — a contact form with no reply-able inbox behind it is worse than no form.
 - Confirm vendor logo usage at go-live (nominative use in a "vendors we support" strip is standard practice, but final sign-off sits with Duncan).
+- Verify the global-support globe's country tiers against the original Cantel coverage slide. The full/partial/not-supported lists in `assets/global-support-globe/global-support-globe.js` were inferred from a flattened screenshot and are editable at the top of that file; the globe carries an "indicative coverage" caption in the meantime so nothing is overclaimed.
