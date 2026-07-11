@@ -45,6 +45,7 @@ a:hover { text-decoration: underline; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; flex-wrap: wrap; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .brand-icon { display: block; }
+.brand-lockup { display: block; height: 48px; width: auto; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name { font-family: var(--heading-font); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 1.1rem; color: var(--teal-dark); }
 .brand-tagline { font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); }
@@ -262,8 +263,14 @@ table.sla-table tr:last-child td { border-bottom: none; }
 .footer-legal a { color: var(--white); text-decoration: underline; }
 
 /* Vendor logo marquee */
-.marquee-track img { height: 32px; width: auto; display: block; filter: grayscale(1); opacity: 0.7; transition: filter 0.2s ease, opacity 0.2s ease; }
+/* Each logo sits in a uniform box and is scaled to fit, so a compact symbol
+   and a wide wordmark carry roughly equal visual weight. Per-logo tweaks below
+   pull back marks that would otherwise read oversized (square symbols) or
+   undersized (very wide wordmarks). */
+.marquee-track img { box-sizing: border-box; height: 38px; width: 116px; object-fit: contain; display: block; filter: grayscale(1); opacity: 0.7; transition: filter 0.2s ease, opacity 0.2s ease; }
 .marquee-track img:hover { filter: none; opacity: 1; }
+.marquee-track img.logo-sm { padding: 4px 0; }
+.marquee-track img.logo-lg { width: 140px; }
 .marquee-track { align-items: center; }
 
 /* Call-request form (Talk to us page) */
