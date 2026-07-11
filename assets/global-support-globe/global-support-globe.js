@@ -117,8 +117,8 @@ const COUNTRY_ALIASES = new Map([
 const STATUS = {
   full: {
     label: "Fully supported",
-    color: new THREE.Color("#28566b"),
-    emissive: new THREE.Color("#0d2834"),
+    color: new THREE.Color("#60a878"),
+    emissive: new THREE.Color("#244e33"),
     height: 0.09
   },
   partial: {
@@ -277,7 +277,7 @@ function buildPins(features, group) {
   for (const feature of features) {
     const countryName = getCountryName(feature);
     const status = getCountryStatus(countryName);
-    const samples = sampleFeature(feature, status === "none" ? 3.1 : 2.2);
+    const samples = sampleFeature(feature, status === "none" ? 2.1 : 1.5);
 
     for (const sample of samples) {
       pinsByStatus[status].push({
@@ -298,7 +298,7 @@ function buildPins(features, group) {
 }
 
 function createPinMesh(pins, statusStyle) {
-  const geometry = new THREE.CylinderGeometry(0.0065, 0.008, statusStyle.height, 7, 1);
+  const geometry = new THREE.CylinderGeometry(0.0037, 0.0045, statusStyle.height, 6, 1);
   const material = new THREE.MeshStandardMaterial({
     color: statusStyle.color,
     emissive: statusStyle.emissive,
@@ -354,7 +354,7 @@ function sampleFeature(feature, stepDegrees) {
 
   for (const polygon of polygons) {
     const box = polygonBounds(polygon);
-    const step = Math.max(1.2, Math.min(stepDegrees, Math.max(box.maxLon - box.minLon, box.maxLat - box.minLat) / 8));
+    const step = Math.max(0.8, Math.min(stepDegrees, Math.max(box.maxLon - box.minLon, box.maxLat - box.minLat) / 8));
     let polygonPointCount = 0;
 
     for (let lat = box.minLat; lat <= box.maxLat; lat += step) {
