@@ -63,6 +63,14 @@
     });
   }
 
+  // Respect reduced-motion preferences: keep the branded video poster visible
+  // without forcing animation for visitors who have asked for less motion.
+  var heroVideo = document.querySelector(".hero-video");
+  if (heroVideo && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    heroVideo.removeAttribute("autoplay");
+    heroVideo.pause();
+  }
+
   // "/" keyboard shortcut: focus the page's search input, if it has one.
   document.addEventListener("keydown", function (e) {
     if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
