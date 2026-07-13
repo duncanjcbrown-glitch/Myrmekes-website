@@ -69,6 +69,7 @@ jobs:
           find . -maxdepth 1 -type f -name '*.html' -print0 | while IFS= read -r -d '' file; do
             sed -i 's#</head>#  <meta name="robots" content="noindex, nofollow">\n</head>#i' "$file"
           done
+          sed -i 's#ErrorDocument 404 /404.html#ErrorDocument 404 /preview/404.html#' .htaccess
 
       - name: Upload website
         shell: bash
