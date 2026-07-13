@@ -6,6 +6,27 @@ Static HTML/CSS site for myrmekes.co.uk. No build step — deploys as-is.
 
 Open `index.html` directly in a browser, or serve the folder with any static file server.
 
+## Deploy to Fasthosts from GitHub
+
+The repository includes `.github/workflows/deploy-fasthosts.yml`. It performs a
+manual, non-destructive SFTP upload to the `HTDOCS` folder on the Linux hosting
+package assigned to `myrmekes.co.uk`.
+
+Before the first deployment:
+
+1. In GitHub, open **Settings > Environments** and create an environment named
+   `fasthosts-production`.
+2. Add two environment secrets:
+   - `FASTHOSTS_USERNAME` — the username shown under Fasthosts **SSH access**.
+   - `FASTHOSTS_PASSWORD` — the SSH password set in the Fasthosts control panel.
+3. Open **Actions > Deploy website to Fasthosts > Run workflow**.
+
+The initial workflow deliberately does not delete remote files. Markdown files,
+repository metadata, workflow files, source artwork, and the `.superpowers`
+folder are excluded from the website upload. After the first deployment has
+been verified, automatic deployment from `main` and safe remote cleanup can be
+enabled separately.
+
 ## Deploy: push to GitHub
 
 This repo is already committed locally (check with `git status` — a clean tree means there's nothing new to add or commit, so skip straight to setting the remote and pushing). If you're starting from a fresh clone or copy instead:

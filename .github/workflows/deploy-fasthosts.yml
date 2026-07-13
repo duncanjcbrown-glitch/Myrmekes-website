@@ -1,0 +1,73 @@
+name: Deploy website to Fasthosts
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fasthosts-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload public site to HTDOCS
+    runs-on: ubuntu-latest
+    environment: fasthosts-production
+
+    env:
+      FASTHOSTS_HOST: sftp.myrmekes.co.uk
+      FASTHOSTS_PORT: "22"
+      FASTHOSTS_REMOTE_DIR: HTDOCS
+      FASTHOSTS_USERNAME: ${{ secrets.FASTHOSTS_USERNAME }}
+      FASTHOSTS_PASSWORD: ${{ secrets.FASTHOSTS_PASSWORD }}
+
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+
+      - name: Check deployment credentials
+        shell: bash
+        run: |
+          if [ -z "$FASTHOSTS_USERNAME" ] || [ -z "$FASTHOSTS_PASSWORD" ]; then
+            echo "Add FASTHOSTS_USERNAME and FASTHOSTS_PASSWORD as GitHub environment secrets before deploying."
+            exit 1
+          fi
+
+      - name: Install secure file-transfer client
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+
+      - name: Trust the Fasthosts SFTP server key
+        shell: bash
+        run: |
+          mkdir -p "$HOME/.ssh"
+          chmod 700 "$HOME/.ssh"
+          cat > "$HOME/.ssh/known_hosts" <<'EOF'
+          sftp.myrmekes.co.uk ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAb7GoirtEov/5iqP03N7f9/EvtZ47eqELPmaKn3OcW
+          EOF
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Upload website
+        shell: bash
+        run: |
+          lftp <<EOF
+          set cmd:fail-exit yes
+          set net:max-retries 2
+          set net:timeout 20
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
+          open sftp://$FASTHOSTS_HOST:$FASTHOSTS_PORT
+          user "$FASTHOSTS_USERNAME" "$FASTHOSTS_PASSWORD"
+          cd "$FASTHOSTS_REMOTE_DIR"
+          mirror --reverse --verbose \
+            --exclude-glob .git/ \
+            --exclude-glob .github/ \
+            --exclude-glob .superpowers/ \
+            --exclude-glob '*.md' \
+            --exclude-glob 'assets/myrmekes-logo-master.png' \
+            ./ ./
+          bye
+          EOF
