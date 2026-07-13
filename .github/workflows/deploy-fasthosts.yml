@@ -2,6 +2,15 @@ name: Deploy website to Fasthosts
 
 on:
   workflow_dispatch:
+    inputs:
+      deploy_target:
+        description: Where should this version be published?
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - production
 
 permissions:
   contents: read
@@ -14,12 +23,14 @@ jobs:
   deploy:
     name: Upload public site to HTDOCS
     runs-on: ubuntu-latest
-    environment: fasthosts-production
+    environment:
+      name: fasthosts-production
+      url: ${{ inputs.deploy_target == 'production' && 'https://myrmekes.co.uk/' || 'https://myrmekes.co.uk/preview/' }}
 
     env:
       FASTHOSTS_HOST: sftp.myrmekes.co.uk
       FASTHOSTS_PORT: "22"
-      FASTHOSTS_REMOTE_DIR: HTDOCS
+      FASTHOSTS_REMOTE_DIR: ${{ inputs.deploy_target == 'production' && 'HTDOCS' || 'HTDOCS/preview' }}
       FASTHOSTS_USERNAME: ${{ secrets.FASTHOSTS_USERNAME }}
       FASTHOSTS_PASSWORD: ${{ secrets.FASTHOSTS_PASSWORD }}
 
@@ -61,6 +72,7 @@ jobs:
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
           open sftp://$FASTHOSTS_HOST:$FASTHOSTS_PORT
           user "$FASTHOSTS_USERNAME" "$FASTHOSTS_PASSWORD"
+          mkdir -p "$FASTHOSTS_REMOTE_DIR"
           cd "$FASTHOSTS_REMOTE_DIR"
           mirror --reverse --verbose \
             --exclude-glob .git/ \
@@ -71,3 +83,14 @@ jobs:
             ./ ./
           bye
           EOF
+
+      - name: Publish deployment link
+        shell: bash
+        run: |
+          if [ "${{ inputs.deploy_target }}" = "production" ]; then
+            echo "### Production deployment complete" >> "$GITHUB_STEP_SUMMARY"
+            echo "https://myrmekes.co.uk/" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "### Preview deployment complete" >> "$GITHUB_STEP_SUMMARY"
+            echo "https://myrmekes.co.uk/preview/" >> "$GITHUB_STEP_SUMMARY"
+          fi

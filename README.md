@@ -20,6 +20,9 @@ Before the first deployment:
    - `FASTHOSTS_USERNAME` — the username shown under Fasthosts **SSH access**.
    - `FASTHOSTS_PASSWORD` — the SSH password set in the Fasthosts control panel.
 3. Open **Actions > Deploy website to Fasthosts > Run workflow**.
+4. Leave **preview** selected to publish safely at
+   `https://myrmekes.co.uk/preview/`. Select **production** only after the
+   preview has been reviewed and approved.
 
 The initial workflow deliberately does not delete remote files. Markdown files,
 repository metadata, workflow files, source artwork, and the `.superpowers`
