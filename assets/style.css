@@ -383,7 +383,9 @@ section.page-section.tight { padding: clamp(40px, 5vw, 64px) 0; }
 .testimonial-card blockquote { margin: 0; color: var(--ink); font-family: var(--heading-font); font-size: 1.04rem; line-height: 1.65; }
 .testimonial-card figcaption { margin-top: auto; display: flex; flex-direction: column; gap: 2px; }
 .testimonial-card figcaption a { color: var(--teal-700); font-weight: 750; }
+.testimonial-card .testimonial-name { color: var(--teal-700); font-weight: 750; }
 .testimonial-card figcaption span { color: var(--faint); font-size: 0.8rem; }
+.testimonial-card figcaption .testimonial-name { font-size: inherit; }
 @media (max-width: 820px) { .testimonial-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Vendor marquee (calibrated — preserved) ---------- */
