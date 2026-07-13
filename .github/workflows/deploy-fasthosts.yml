@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Upload public site to HTDOCS
+    name: Upload public site to htdocs
     runs-on: ubuntu-latest
     environment:
       name: fasthosts-production
@@ -30,7 +30,7 @@ jobs:
     env:
       FASTHOSTS_HOST: sftp.myrmekes.co.uk
       FASTHOSTS_PORT: "22"
-      FASTHOSTS_REMOTE_DIR: ${{ inputs.deploy_target == 'production' && 'HTDOCS' || 'HTDOCS/preview' }}
+      FASTHOSTS_REMOTE_DIR: ${{ inputs.deploy_target == 'production' && 'htdocs' || 'htdocs/preview' }}
       FASTHOSTS_USERNAME: ${{ secrets.FASTHOSTS_USERNAME }}
       FASTHOSTS_PASSWORD: ${{ secrets.FASTHOSTS_PASSWORD }}
 

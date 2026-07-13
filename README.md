@@ -9,7 +9,7 @@ Open `index.html` directly in a browser, or serve the folder with any static fil
 ## Deploy to Fasthosts from GitHub
 
 The repository includes `.github/workflows/deploy-fasthosts.yml`. It performs a
-manual, non-destructive SFTP upload to the `HTDOCS` folder on the Linux hosting
+manual, non-destructive SFTP upload to the `htdocs` folder on the Linux hosting
 package assigned to `myrmekes.co.uk`.
 
 Before the first deployment:
