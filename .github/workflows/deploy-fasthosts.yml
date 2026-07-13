@@ -80,7 +80,6 @@ jobs:
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
           open sftp://$FASTHOSTS_HOST:$FASTHOSTS_PORT
           user "$FASTHOSTS_USERNAME" "$FASTHOSTS_PASSWORD"
-          mkdir -p "$FASTHOSTS_REMOTE_DIR"
           cd "$FASTHOSTS_REMOTE_DIR"
           mirror --reverse --verbose \
             --exclude-glob .git/ \
