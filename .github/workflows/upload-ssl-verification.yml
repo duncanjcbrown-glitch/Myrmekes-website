@@ -1,0 +1,76 @@
+name: Upload SSL verification file
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fasthosts-production
+  cancel-in-progress: false
+
+jobs:
+  verify-domain:
+    name: Upload certificate authority verification
+    runs-on: ubuntu-latest
+    environment:
+      name: fasthosts-production
+      url: http://myrmekes.co.uk/.well-known/pki-validation/DEC6013681816EEFF3DE45E50D8D1A81.txt
+
+    env:
+      FASTHOSTS_HOST: sftp.myrmekes.co.uk
+      FASTHOSTS_PORT: "22"
+      FASTHOSTS_REMOTE_DIR: htdocs
+      FASTHOSTS_USERNAME: ${{ secrets.FASTHOSTS_USERNAME }}
+      FASTHOSTS_PASSWORD: ${{ secrets.FASTHOSTS_PASSWORD }}
+
+    steps:
+      - name: Check out the verification file
+        uses: actions/checkout@v7
+
+      - name: Check deployment credentials
+        shell: bash
+        run: |
+          if [ -z "$FASTHOSTS_USERNAME" ] || [ -z "$FASTHOSTS_PASSWORD" ]; then
+            echo "The Fasthosts environment credentials are missing."
+            exit 1
+          fi
+
+      - name: Install secure file-transfer client
+        shell: bash
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+
+      - name: Trust the Fasthosts SFTP server key
+        shell: bash
+        run: |
+          mkdir -p "$HOME/.ssh"
+          chmod 700 "$HOME/.ssh"
+          cat > "$HOME/.ssh/known_hosts" <<'EOF'
+          sftp.myrmekes.co.uk ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICAb7GoirtEov/5iqP03N7f9/EvtZ47eqELPmaKn3OcW
+          EOF
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+      - name: Upload only the domain verification file
+        shell: bash
+        run: |
+          lftp <<EOF
+          set cmd:fail-exit yes
+          set net:max-retries 2
+          set net:timeout 20
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts"
+          open sftp://$FASTHOSTS_HOST:$FASTHOSTS_PORT
+          user "$FASTHOSTS_USERNAME" "$FASTHOSTS_PASSWORD"
+          cd "$FASTHOSTS_REMOTE_DIR"
+          mkdir -p .well-known/pki-validation
+          put .well-known/pki-validation/DEC6013681816EEFF3DE45E50D8D1A81.txt -o .well-known/pki-validation/DEC6013681816EEFF3DE45E50D8D1A81.txt
+          bye
+          EOF
+
+      - name: Publish verification link
+        shell: bash
+        run: |
+          echo "### SSL domain verification file uploaded" >> "$GITHUB_STEP_SUMMARY"
+          echo "http://myrmekes.co.uk/.well-known/pki-validation/DEC6013681816EEFF3DE45E50D8D1A81.txt" >> "$GITHUB_STEP_SUMMARY"
