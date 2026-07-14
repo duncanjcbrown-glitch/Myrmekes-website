@@ -16,14 +16,23 @@
   var navToggle = document.querySelector(".nav-toggle");
   var siteNav = document.getElementById("site-nav");
   if (navToggle && siteNav) {
-    navToggle.addEventListener("click", function () {
-      var open = siteNav.classList.toggle("open");
+    var setNavOpen = function (open) {
+      siteNav.classList.toggle("open", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    navToggle.addEventListener("click", function () {
+      setNavOpen(!siteNav.classList.contains("open"));
     });
     siteNav.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
-        siteNav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
+        setNavOpen(false);
+      }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && siteNav.classList.contains("open")) {
+        setNavOpen(false);
+        navToggle.focus();
       }
     });
   }
