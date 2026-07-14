@@ -49,19 +49,17 @@
 
     <div class="contact-grid">
       <div>
-        <!--
-          HubSpot form embed goes here. Replace this comment block and the
-          call form below with the embed code from your HubSpot account
-          (Marketing > Forms > [your form] > Embed). Until then, the form
-          assembles a pre-filled email via mailto: as the working fallback.
-        -->
-        <form class="call-form" id="call-form">
-          <label>Name<br><input type="text" name="name" required></label>
-          <label>Company<br><input type="text" name="company"></label>
-          <label>Email<br><input type="email" name="email" required></label>
-          <label>Phone<br><input type="tel" name="phone"></label>
+        <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        <form class="call-form" id="call-form" action="contact-submit.php" method="post" accept-charset="UTF-8">
+          <input type="hidden" name="form_started" value="" data-form-started>
+          <input type="hidden" name="context" value="" data-form-context>
+          <label class="form-honeypot" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <label>Name<br><input type="text" name="name" autocomplete="name" maxlength="120" required></label>
+          <label>Company<br><input type="text" name="company" autocomplete="organization" maxlength="160"></label>
+          <label>Email<br><input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+          <label>Phone<br><input type="tel" name="phone" autocomplete="tel" maxlength="40"></label>
           <label>What do you need help with?<br>
-            <select name="need">
+            <select name="need" required>
               <option>Hardware going end-of-service-life</option>
               <option>Break/fix or SLA cover</option>
               <option>Engineers onsite</option>
@@ -70,10 +68,10 @@
               <option>Something else</option>
             </select>
           </label>
-          <label>What's happening?<br><textarea name="details" rows="4" placeholder="A sentence or two is plenty — we'll dig into the rest on the call."></textarea></label>
-          <label>Preferred time for a call (optional)<br><input type="text" name="time" placeholder="e.g. weekday mornings"></label>
+          <label>What's happening?<br><textarea name="details" rows="4" maxlength="3000" required placeholder="A sentence or two is plenty — we'll dig into the rest on the call."></textarea></label>
+          <label>Preferred time for a call (optional)<br><input type="text" name="time" maxlength="120" placeholder="e.g. weekday mornings"></label>
           <button type="submit" class="btn btn-primary">Request a call</button>
-          <p class="search-hint">Submitting opens a pre-filled email in your mail app — nothing is stored on this site.</p>
+          <p class="search-hint">Your enquiry will be emailed securely to Myrmekes. We do not add you to marketing lists. See our <a href="privacy.html">Privacy Policy</a>.</p>
         </form>
       </div>
       <div class="contact-details">

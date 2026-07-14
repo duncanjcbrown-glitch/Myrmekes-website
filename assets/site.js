@@ -102,27 +102,29 @@
     }
   }
 
-  // Call-request form: assemble a pre-filled email via mailto (HubSpot pending).
+  // Call-request form: timestamp submissions for basic bot detection, preserve
+  // useful page context, and display the server-confirmed result after redirect.
   var callForm = document.getElementById("call-form");
   if (callForm) {
-    callForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var f = callForm.elements;
-      var techParam = new URLSearchParams(window.location.search).get("tech");
-      var lines = [
-        "Name: " + f.name.value,
-        "Company: " + (f.company.value || "-"),
-        "Email: " + f.email.value,
-        "Phone: " + (f.phone.value || "-"),
-        "Help needed with: " + f.need.value + (techParam ? " (arrived via: " + techParam + ")" : ""),
-        "",
-        "What's happening:",
-        f.details.value || "-",
-        "",
-        "Preferred call time: " + (f.time.value || "any")
-      ];
-      var subject = "Call request: " + f.need.value + (f.company.value ? " — " + f.company.value : "");
-      window.location.href = "mailto:info@myrmekes.co.uk?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
-    });
+    var formParams = new URLSearchParams(window.location.search);
+    var startedInput = callForm.querySelector("[data-form-started]");
+    var contextInput = callForm.querySelector("[data-form-context]");
+    if (startedInput) startedInput.value = String(Date.now());
+    if (contextInput) contextInput.value = (formParams.get("tech") || "").slice(0, 160);
+
+    var formStatus = document.getElementById("form-status");
+    if (formStatus && formParams.get("sent") === "1") {
+      formStatus.classList.add("form-status--success");
+      formStatus.textContent = "Thank you — your enquiry has been sent to Myrmekes. We'll respond as soon as we can.";
+      formStatus.hidden = false;
+      formStatus.focus();
+    } else if (formStatus && formParams.has("error")) {
+      formStatus.classList.add("form-status--error");
+      formStatus.textContent = formParams.get("error") === "validation"
+        ? "Please check the required fields and try again."
+        : "We couldn't send that enquiry. Please email info@myrmekes.co.uk or call 07881 064209.";
+      formStatus.hidden = false;
+      formStatus.focus();
+    }
   }
 })();

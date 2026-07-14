@@ -496,6 +496,11 @@ table.sla-table tr:last-child td { border-bottom: none; }
 }
 .call-form input:focus, .call-form select:focus, .call-form textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,156,189,.16); background: var(--surface); }
 .call-form button { align-self: flex-start; border: none; cursor: pointer; font-size: 1rem; font-family: inherit; }
+.form-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+.form-status { margin: 0 0 18px; padding: 16px 18px; border-radius: var(--radius-sm); border: 1px solid; font-weight: 650; }
+.form-status--success { color: #0B5438; background: #E9F8F0; border-color: #8FD3AE; }
+.form-status--error { color: #7A2632; background: #FFF0F2; border-color: #E9A6AF; }
+.form-status:focus { outline: 3px solid rgba(0,156,189,.35); outline-offset: 2px; }
 
 /* ---------- FAQ list ---------- */
 .faq-list h2 {
