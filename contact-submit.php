@@ -4,6 +4,9 @@ declare(strict_types=1);
 const CONTACT_RECIPIENT = 'info@myrmekes.co.uk';
 const CONTACT_FROM = 'info@myrmekes.co.uk';
 
+header('Cache-Control: no-store');
+header('X-Robots-Tag: noindex, nofollow');
+
 function redirect_to_form(string $query): never
 {
     header('Location: contact.html?' . $query, true, 303);
