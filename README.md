@@ -65,4 +65,3 @@ git push -u origin main
 - Confirm vendor logo usage at go-live (nominative use in a "vendors we support" strip is standard practice, but final sign-off sits with Duncan).
 - Build the planned country-search tool from verified source data: vendor support, available response levels, parts coverage and delivery constraints by country. The launch site deliberately uses a lightweight summary instead of inferred country-level claims.
 - Replace the call-request form with a live booking link only after working hours, buffers, notice period and maximum bookings per day are agreed and configured against Duncan's calendar.
-
