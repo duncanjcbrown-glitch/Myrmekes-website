@@ -20,7 +20,12 @@
   }
 
   function techLink(name) {
+    if (name === "Dell EMC") return "dell-emc-support.html";
     return "contact.html?tech=" + encodeURIComponent(name);
+  }
+
+  function techButtonLabel(name) {
+    return name === "Dell EMC" ? "Explore Dell EMC support" : "Get help with " + name;
   }
 
   function escapeHtml(s) {
@@ -72,7 +77,7 @@
       '<div class="tech-card">' +
       "<h4>" + escapeHtml(vendor.name) + "</h4>" +
       '<p class="tech-tags">' + escapeHtml(tags) + "</p>" +
-      '<a href="' + techLink(vendor.name) + '" class="btn btn-primary">Get help with ' + escapeHtml(vendor.name) + "</a>" +
+      '<a href="' + techLink(vendor.name) + '" class="btn btn-primary">' + escapeHtml(techButtonLabel(vendor.name)) + "</a>" +
       '<p class="tech-tags" style="margin-top:8px;"><a href="' + servicesLink(vendor) + '">Related services &rarr;</a></p>' +
       "</div>"
     );
