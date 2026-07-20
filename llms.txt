@@ -8,6 +8,13 @@
 > device repair. UK-based engineers across six depots, coverage in 100+
 > countries with trusted affiliates. Tagline: Multi Sumus ("we are many").
 
+## Delivery partners and credentials
+
+- Myrmekes works with [Cantel Computer Services](https://cantelsupport.com/) and [CloudCoCo](https://cloudcoco.co.uk/) to deliver services.
+- Cantel's engineers deliver Myrmekes support. The 30+ years of delivery heritage, ISO 9001 and ISO 27001 certifications, and Certified B Corporation status shown on this site belong to Cantel, not Myrmekes.
+- Cantel's B Corp status can be verified in the [B Lab directory](https://www.bcorporation.net/en-us/find-a-b-corp/company/cantel-computer-services-ltd/).
+- UK services draw on 66 field engineers across six regional depots. International requirements can be coordinated through trusted affiliates in 100+ countries. Exact vendor, response, parts and geographic coverage is confirmed per engagement.
+
 ## Key pages
 
 - [Services](https://myrmekes.co.uk/services.html): rack and stack, break/fix, post-warranty support, migrations, rollouts, IMACD, ITAD, network installation, and more, across eight service pillars.
@@ -17,3 +24,4 @@
 - [FAQ](https://myrmekes.co.uk/faq.html): third-party maintenance, EOSL, exclusions, cleared engineers.
 - [Case Studies](https://myrmekes.co.uk/case-studies.html): sector-anonymized delivery examples.
 - [Contact](https://myrmekes.co.uk/contact.html): info@myrmekes.co.uk
+
