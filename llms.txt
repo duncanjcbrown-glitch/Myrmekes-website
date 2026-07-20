@@ -13,7 +13,7 @@
 ## Delivery partners and credentials
 
 - Myrmekes works with [Cantel Computer Services](https://cantelsupport.com/) and [CloudCoCo](https://cloudcoco.co.uk/) to deliver services.
-- Cantel delivers Myrmekes support and professional services in the UK. Outside the UK, delivery is provided through Cantel-approved service partners and affiliates. The 30+ years of delivery heritage, ISO 9001 and ISO 27001 certifications, and Certified B Corporation status shown on this site belong to Cantel, not Myrmekes.
+- Cantel delivers Myrmekes support and professional services in the UK. Outside the UK, delivery is provided through Cantel-approved service partners and affiliates. The 30+ years of delivery heritage, ISO 9001:2015 certification and Certified B Corporation status shown on this site belong to Cantel, not Myrmekes. Current insurance evidence and applicable limits are supplied during due diligence and contracting.
 - Cantel's B Corp status can be verified in the [B Lab directory](https://www.bcorporation.net/en-us/find-a-b-corp/company/cantel-computer-services-ltd/).
 - UK services draw on 66 field engineers across six regional depots: Newark-upon-Trent, Leeds, Croydon, Glasgow, Belfast, and Bristol. Outside the UK, Cantel-approved service partners and affiliates provide delivery. Exact vendor, response, parts, travel and geographic coverage is confirmed per engagement.
 
@@ -25,9 +25,12 @@
 - [How to Choose a Dell EMC Support Partner](https://myrmekes.co.uk/choose-dell-emc-support-partner.html): 2026 checklist covering scope, response, engineers, parts, exclusions, pricing and lifecycle planning.
 - [Dell EMC Unity Support](https://myrmekes.co.uk/dell-emc-unity-support.html): assessed Unity and Unity XT hardware support, with software and firmware boundaries made explicit.
 - [Dell EMC VNX Support](https://myrmekes.co.uk/dell-emc-vnx-support.html): assessed VNX and VNXe lifecycle hardware support.
+- [Dell EMC Lifecycle Dates](https://myrmekes.co.uk/dell-emc-lifecycle-dates.html): 50 curated Unity, VNX and VNXe records from Dell Technologies' hardware lifecycle workbook dated 9 July 2026, preserving Dell's RTS, EOL, End of Expansion and EOSS terminology.
+- [Delivery Model and Cantel Credentials](https://myrmekes.co.uk/delivery-and-credentials.html): clear attribution of UK delivery, international partner delivery, Cantel ISO 9001:2015 and Cantel Certified B Corporation status.
 - [Dell EMC EOSL Planning](https://myrmekes.co.uk/dell-emc-eosl-support.html): compare OEM, independent, hybrid and refresh routes before cover expires.
 - [Support Contracts](https://myrmekes.co.uk/support-contracts.html): SLA tiers and how engagements work.
 - [EUC Device Support](https://myrmekes.co.uk/euc-support.html): annual-fee support for agreed laptop, tablet, and mobile estates, with repair, return, or replacement according to the contracted tier.
 - [FAQ](https://myrmekes.co.uk/faq.html): third-party maintenance, EOSL, exclusions, cleared engineers.
 - [Case Studies](https://myrmekes.co.uk/case-studies.html): sector-anonymized delivery examples.
 - [Contact](https://myrmekes.co.uk/contact.html): info@myrmekes.co.uk
+
