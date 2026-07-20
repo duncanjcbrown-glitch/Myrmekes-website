@@ -4,8 +4,8 @@
 > fulfilment to end users. Cantel delivers support and professional services in
 > the UK; outside the UK, delivery is provided through Cantel-approved partners.
 > Multi-vendor hardware support (Cisco, Microsoft, VMware, Dell, Dell EMC, HPE,
-> NetApp, Fortinet and ~50 more), response tiers from 2-hour onsite to next
-> business day, post-warranty and end-of-service-life (EOSL) support, and EUC
+> NetApp, Fortinet and ~50 more), contract-specific response options,
+> post-warranty and end-of-service-life (EOSL) support, and EUC
 > device repair. The approved UK delivery network has 66 field engineers across
 > six depots. International availability is confirmed per engagement. Tagline:
 > Multi Sumus ("we are many").
@@ -21,6 +21,11 @@
 
 - [Services](https://myrmekes.co.uk/services.html): rack and stack, break/fix, post-warranty support, migrations, rollouts, IMACD, ITAD, network installation, and more, across eight service pillars.
 - [Technology directory](https://myrmekes.co.uk/technology.html): searchable list of 56 supported vendors and technologies.
+- [Dell EMC Support](https://myrmekes.co.uk/dell-emc-support.html): UK post-warranty and lifecycle hardware support hub for assessed Dell EMC storage estates.
+- [How to Choose a Dell EMC Support Partner](https://myrmekes.co.uk/choose-dell-emc-support-partner.html): 2026 checklist covering scope, response, engineers, parts, exclusions, pricing and lifecycle planning.
+- [Dell EMC Unity Support](https://myrmekes.co.uk/dell-emc-unity-support.html): assessed Unity and Unity XT hardware support, with software and firmware boundaries made explicit.
+- [Dell EMC VNX Support](https://myrmekes.co.uk/dell-emc-vnx-support.html): assessed VNX and VNXe lifecycle hardware support.
+- [Dell EMC EOSL Planning](https://myrmekes.co.uk/dell-emc-eosl-support.html): compare OEM, independent, hybrid and refresh routes before cover expires.
 - [Support Contracts](https://myrmekes.co.uk/support-contracts.html): SLA tiers and how engagements work.
 - [EUC Device Support](https://myrmekes.co.uk/euc-support.html): annual-fee support for agreed laptop, tablet, and mobile estates, with repair, return, or replacement according to the contracted tier.
 - [FAQ](https://myrmekes.co.uk/faq.html): third-party maintenance, EOSL, exclusions, cleared engineers.
